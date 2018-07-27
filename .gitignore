@@ -1,6 +1,7 @@
 /.idea/*
 /client/node_modules/*
 /server/public/node_modules/*
+/server/public/ats/*
 /server/tmp/*
 /server/vendor/*
 .env
