@@ -23,15 +23,17 @@ In this project implemented: registration, authorization, csrf token protected, 
     b) Get npm dependencies : $ npm install
     
     c) Run Gulp : $ gulp
+    
 7) Compile client for prod:
 
     a) Go to directory with client source files: $ cd autovk/client 
     
     b) Get npm dependencies : $ npm install
     
-    c) Build client files with angular-cli: $ ng build --prod (default destination path for client files:"serve/public/ats", you can change it in .angular-cli.json)
+    c) Build client files with angular-cli: $ ng build --prod (default destination path for client files:"server/public/ats")
     
-8) Compile client for dev: $ ng serve --proxy-config proxy.conf.json (Change your server address in proxy.conf.json)
+8) Compile client for dev: $ ng serve --proxy-config proxy.conf.json (Change your server address in proxy.conf.json) and browse to http://localhost:4200 after authorization
+
 
 9) Run server/autopost.php with Сron to automatically send posts
 
@@ -55,7 +57,7 @@ server/vendor: Composer dependencies
 
 server/migrations: Migrations
 
-Key files
+**Key files**
 
 server/public/index.php: Entry point to application
 
