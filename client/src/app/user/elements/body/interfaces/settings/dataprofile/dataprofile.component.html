@@ -1,0 +1,22 @@
+ <h5 class="mb-3">Личные данные</h5>
+ <h6 *ngIf="!user.is_sync">Для работы с системой необходимо получить токен доступа к вк</h6>
+  <div class="row" *ngIf="user.is_sync">
+    <div class="col-md-6">
+      <h6>Имя</h6>
+      <p>
+        {{user?.last_name}} {{user?.first_name}}
+      </p>
+      <h6>Дата Рождения</h6>
+      <p>
+        {{user?.bdate}}
+      </p>
+    </div>
+    <div class="col-md-6">
+      <h6>Мои сообщества</h6>
+      <a href="javascript:void(0)" *ngFor="let group of groups" class="badge badge-dark badge-pill">{{group.name}}</a>
+      <hr>
+      <span class="badge badge-primary"><i class="fa fa-users"></i> {{user?.counters?.followers}} Подписчиков</span>
+      <span class="badge badge-success"><i class="fa fa-user-circle"></i> {{user?.counters?.friends}} Друзей</span>
+      <span class="badge badge-danger"><i class="fa fa-object-group"></i> {{user?.counters?.followers}} Сообществ</span>
+    </div>
+  </div>

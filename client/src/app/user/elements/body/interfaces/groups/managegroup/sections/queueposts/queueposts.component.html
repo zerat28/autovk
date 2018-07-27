@@ -1,0 +1,37 @@
+<div id="user-settings">
+  <div class="tile user-settings">
+    <h4 class="line-head">Очередь постов ({{group.name}})</h4>
+    <div class="row">
+      <div class="col-3">
+        <button  (click)="visibleFilter = !visibleFilter" class="btn btn-primary" type="button"><i class="fa fa-fw fa-lg fa-filter"></i>Фильтр</button>
+      </div>
+    </div>
+    <app-postfilter *ngIf="visibleFilter" (sendFilter)="setFilter($event)"></app-postfilter>
+    <div class="row" style="padding-top: 20px">
+      <div class="col-md-12">
+        <table class="table table-hover table-bordered">
+          <thead>
+          <tr>
+            <th>Дата размещения</th>
+            <th>Текст</th>
+            <th>Дата обновления</th>
+            <th>Действия</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let post of posts | orderByPipe:'datetime'">
+            <td>{{post.datetime | date: 'dd.MM.yyyy H:mm'}}</td>
+            <td>{{post.text}}</td>
+            <td>{{post.updated_at | date: 'dd.MM.yyyy'}}</td>
+            <td style="text-align: center">
+              <a  [routerLink]="'../editpost/'+post.id" href="javascript:void(0)"><i class="fa fa-pencil" style="margin-right: 20px"></i></a>
+              <a (click)="delPost(post.id)" href="javascript:void(0)" style="margin-right: 20px"><i class="fa fa-trash"></i></a>
+              <a (click)="sendPost(post)" href="javascript:void(0)"><i class="fa fa-paper-plane-o"></i></a>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

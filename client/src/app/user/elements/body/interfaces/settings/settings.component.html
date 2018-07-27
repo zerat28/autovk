@@ -1,0 +1,55 @@
+<div class="app-title">
+  <div>
+    <h1><i class="fa fa-cog"></i>Настройки</h1>
+    <p>Синхронизация с вк, учетные данные</p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="tile">
+      <div class="row my-2">
+        <div class="col-lg-8 order-lg-2">
+          <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a href="" data-target="#profile" data-toggle="tab" class="nav-link active">Информация</a>
+            </li>
+            <li class="nav-item">
+              <a href="" data-target="#edit" data-toggle="tab" class="nav-link">Учетные данные</a>
+            </li>
+          </ul>
+          <div class="tab-content py-4">
+            <div class="tab-pane active" id="profile">
+              <app-dataprofile
+                [user]="user">
+              </app-dataprofile>
+            </div>
+            <div class="tab-pane" id="edit">
+              <app-editprofile
+                *ngIf="user"
+                [user]="user">
+              </app-editprofile>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 order-lg-1 text-center">
+          <img src="{{user?.photo_200}}" class="mx-auto img-fluid img-circle d-block">
+          <ng-container *ngIf="!user.is_sync">
+            <img src="assets/img/avatar_none.png" class="mx-auto img-fluid img-circle d-block">
+            <span class="custom-file-control">
+              <label class="col-form-label form-control-label">Токен доступа(необходимо скопировать из адресной строки)</label>
+              <input class="form-control" type="text" [formControl]="form.controls['access_token']">
+            </span>
+            <div class="row" style="padding-top:20px;">
+              <div class="col-6">
+                <a (click)="setToken()" class="btn btn-primary icon-btn" href="javascript:void(0)">Сохранить токен</a>
+              </div>
+              <div class="col-6">
+                <a href="{{link}}" target="_blank" class="btn btn-primary icon-btn" href="javascript:void(0)">Получить токен</a>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

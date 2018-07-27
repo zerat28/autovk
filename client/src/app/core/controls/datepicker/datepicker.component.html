@@ -1,0 +1,8 @@
+<label>{{label}}</label>
+<input class="form-control" type="text"
+       (dateTimeChange)="onChange()"
+       [owlDateTime]="dt"
+       [owlDateTimeTrigger]="dt"
+       [formControl]="control"
+       placeholder="{{placeholder}}">
+<owl-date-time  #dt></owl-date-time>

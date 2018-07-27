@@ -1,0 +1,39 @@
+<div id="user-settings">
+  <div class="tile user-settings">
+    <h4 class="line-head">Добавление поста ({{group.name}})</h4>
+    <app-alert
+      [alert]="alert">
+    </app-alert>
+    <form>
+      <div class="row mb-4">
+        <div class="col-md-6">
+          <control-textarea [control]="form.controls['text']" [label]="'Текст поста'"></control-textarea>
+        </div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-md-6">
+          <control-datepicker
+            [label]="'Дата и время размещения поста'"
+            [control]="form.controls['datetime']">
+          </control-datepicker>
+        </div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-md-6">
+          <control-inputfile
+            (setFile)="setAttachment($event)"
+            [accept]="'image/jpeg,image/png,image/gif'"
+            [control]="form.controls['img']"
+            [label]="'Изображение поста'">
+          </control-inputfile>
+        </div>
+      </div>
+      <div class="row mb-10">
+        <div class="col-md-12">
+          <button (click)="savePost()" class="btn btn-primary" type="button"><i class="fa fa-fw fa-lg fa-save"></i>Добавить
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

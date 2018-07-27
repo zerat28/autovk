@@ -1,0 +1,40 @@
+<div id="user-settings">
+  <div class="tile user-settings">
+    <h4 class="line-head">Массовое добавление постов ({{group.name}})</h4>
+    <app-alert
+      [alert]="alert"
+      (emitClose)="resetAlert()">
+    </app-alert>
+    <form>
+      <div class="row mb-4">
+        <div class="col-md-6">
+          <control-datepicker
+            [label]="'Начальная дата'"
+            [control]="form.controls['datetime']">
+          </control-datepicker>
+        </div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-md-6">
+          <label>Интервал (в минутах)</label>
+          <input class="form-control" type="number" min="0" max="60" [formControl]="form.controls['interval']">
+        </div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-md-6">
+          <control-inputfile
+            (setFile)="setAttachment($event)"
+            [accept]="'application/zip'"
+            [control]="form.controls['attachment']"
+            [label]="'Zip архив с изображениями'">
+          </control-inputfile>
+        </div>
+      </div>
+      <div class="row mb-10">
+        <div class="col-md-12">
+          <button (click)="addPosts()" class="btn btn-primary" type="button"><i class="fa fa-fw fa-lg fa-save"></i>Добавить</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

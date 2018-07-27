@@ -1,0 +1,19 @@
+<div class="row user">
+  <div class="col-md-3">
+    <div class="tile p-0">
+      <ul class="nav flex-column nav-tabs user-tabs">
+        <li *ngFor="let item of dict.headers.menuGroupItems" class="nav-item">
+          <a class="nav-link"
+             [routerLinkActive]="'active'"
+             routerLink="{{item.url}}"
+             data-toggle="tab">{{item.label}}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="col-md-9" *ngIf="is_active_group">
+    <div class="tab-content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

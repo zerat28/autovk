@@ -1,0 +1,17 @@
+<div class="app-sidebar__overlay" data-toggle="sidebar"></div>
+<aside class="app-sidebar">
+  <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" width="70px" height="70px" src="assets/img/avatar.png" alt="User Image">
+    <div>
+      <p class="app-sidebar__user-name">{{user?.name}}</p>
+      <!--<p class="app-sidebar__user-designation">Frontend Developer</p>-->
+    </div>
+  </div>
+  <ul class="app-menu">
+    <li *ngFor="let item of dict.headers.menuItems">
+      <a class="app-menu__item" [routerLinkActive]="'active'" [routerLink]="[item.url]"><i
+        class="app-menu__icon fa fa-{{item.icon}}"></i><span
+        class="app-menu__label">{{item.label}}</span>
+      </a>
+    </li>
+  </ul>
+</aside>
