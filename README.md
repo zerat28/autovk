@@ -6,7 +6,7 @@ In this project implemented: registration, authorization, csrf token protected, 
 
 **Run it:**
 
-1) Put the repo on your server
+1) Put the repo on your Webserver
 
 2) $ cd autovk/server
 
@@ -36,6 +36,8 @@ In this project implemented: registration, authorization, csrf token protected, 
 
 
 9) Run server/autopost.php with Сron to automatically send posts
+
+10) Browse to your Webserver address for open landing page
 
 **Key directories**
 
