@@ -1,4 +1,4 @@
-**Autoposting in vk**
+**Autoposting to vk**
 
 This is a simple Autoposting project used Slim3 framework for server api and Angular5 for client side.
 
